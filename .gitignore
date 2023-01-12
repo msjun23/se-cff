@@ -5,5 +5,5 @@ build/
 # vs code
 .vscode/
 
-# Duplicated src/ in save/
-save/src/
+# Ignore inference images
+save/visualize/
