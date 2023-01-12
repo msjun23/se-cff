@@ -26,6 +26,6 @@ RUN python3 -m pip install --upgrade setuptools==57.0.0
 RUN pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 -f https://download.pytorch.org/whl/torch_stable.html
 RUN conda install -y -c numba numba==0.53.1
 RUN conda install -y -c conda-forge h5py==2.10.0 blosc-hdf5-plugin==1.0.0 scikit-video==1.1.11 tqdm==4.61.1 prettytable==2.1.0
-RUN python3 -m pip install yacs==0.1.8 pytz==2021.1 tensorboard==2.5.0 opencv-python==4.5.2.54 einops==0.3.2 matplotlib
+RUN python3 -m pip install yacs==0.1.8 pytz==2021.1 tensorboard==2.5.0 opencv-python==4.5.2.54 einops==0.3.2 matplotlib snntorch protobuf==3.20.1
 
 ARG DEBIAN_FRONTEND=teletype
