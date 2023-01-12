@@ -6,6 +6,7 @@ from einops import rearrange
 from .concentration import ConcentrationNet
 from .stereo_matching import StereoMatchingNetwork
 
+from torchvision.transforms.functional import to_pil_image
 
 class EventStereoMatchingNetwork(nn.Module):
     def __init__(self, 
@@ -26,6 +27,9 @@ class EventStereoMatchingNetwork(nn.Module):
         for loc in ['l', 'r']:
             event_stack[loc] = rearrange(event_stack[loc], 'b c h w t s -> b (c s t) h w')
             concentrated_event_stack[loc] = self.concentration_net(event_stack[loc])
+            for i in range(len(concentrated_event_stack[loc])):                         # save event stack images
+                img = to_pil_image(concentrated_event_stack[loc][i])
+                img.save(f'../save/event_stack/{loc}/{loc}_pil_img_{i}.jpg', 'JPEG')
 
         pred_disparity_pyramid = self.stereo_matching_net(
             concentrated_event_stack['l'],
