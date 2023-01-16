@@ -6,10 +6,10 @@ build/
 .vscode/
 
 # Ignore inference images
-save/visualize/
+visualize/
 
 # Commit only final.pth
-save/weights/25.pth
-save/weights/50.pth
-save/weights/75.pth
-save/weights/100.pth
+save/*/weights/25.pth
+save/*/weights/50.pth
+save/*/weights/75.pth
+save/*/weights/100.pth
