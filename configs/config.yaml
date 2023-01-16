@@ -4,7 +4,7 @@ DATASET:
   TRAIN:
     NAME: dsec
     PARAMS:
-      split: trainval
+      split: train
       sampling_ratio: 1
       crop_height: 432
       crop_width: 576
@@ -17,6 +17,23 @@ DATASET:
           use_preprocessed_image: True
       disparity_cfg:
         NAME: base
+        PARAMS: { }
+  VALIDATION:
+    NAME: dsec
+    PARAMS:
+      split: validation
+      sampling_ratio: 1
+      crop_height: 480
+      crop_width: 648
+      event_cfg:
+        NAME: sbn
+        PARAMS:
+          num_of_event: 5000000
+          stack_method: MixedDensityEventStacking
+          stack_size: 10
+          use_preprocessed_image: True
+      disparity_cfg:
+        NAME: none
         PARAMS: { }
   TEST:
     NAME: dsec
@@ -42,6 +59,12 @@ DATALOADER:
       batch_size: 4
       shuffle: True
       drop_last: True
+  VALIDATION:
+    NAME: get_sequence_dataloader
+    PARAMS:
+      batch_size: 4
+      shuffle: False
+      drop_last: False
   TEST:
     NAME: get_sequence_dataloader
     PARAMS:
