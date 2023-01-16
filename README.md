@@ -1,3 +1,42 @@
+# Experiment history
+
+## Full datasets
+```python
+'trainval': ['train/interlaken_00_c', 'train/interlaken_00_d', 'train/interlaken_00_e', 'train/interlaken_00_f', 
+             'train/interlaken_00_g', 'train/thun_00_a', 'train/zurich_city_00_a', 'train/zurich_city_00_b',
+             'train/zurich_city_01_a', 'train/zurich_city_01_b', 'train/zurich_city_01_c', 'train/zurich_city_01_d',
+             'train/zurich_city_01_e', 'train/zurich_city_01_f', 'train/zurich_city_02_a', 'train/zurich_city_02_b',
+             'train/zurich_city_02_c', 'train/zurich_city_02_d', 'train/zurich_city_02_e', 'train/zurich_city_03_a',
+             'train/zurich_city_04_a', 'train/zurich_city_04_b', 'train/zurich_city_04_c', 'train/zurich_city_04_d',
+             'train/zurich_city_04_e', 'train/zurich_city_04_f', 'train/zurich_city_05_a', 'train/zurich_city_05_b',
+             'train/zurich_city_06_a', 'train/zurich_city_07_a', 'train/zurich_city_08_a', 'train/zurich_city_09_a',
+             'train/zurich_city_09_b', 'train/zurich_city_09_c', 'train/zurich_city_09_d', 'train/zurich_city_09_e',
+             'train/zurich_city_10_a', 'train/zurich_city_10_b', 'train/zurich_city_11_a', 'train/zurich_city_11_b',
+             'train/zurich_city_11_c']
+```
+
+## Part datasets
+```python
+'trainval': ['train/interlaken_00_c',  'train/zurich_city_00_b', 'train/zurich_city_02_a', 
+             'train/zurich_city_04_b', 'train/zurich_city_06_a', 'train/zurich_city_09_e']
+```
+
+
+<details>
+<summary>0112</summary>
+
+- origin code
+
+- batch size: 4
+
+- datasets: Part
+
+</details>
+
+
+<details>
+  <summary>SE-CFF details</summary>
+
 # SE-CFF 
 ### [S]tereo depth from [E]vents Cameras: [C]oncentrate and [F]ocus on the [F]uture
 This is an official code repo for "**Stereo Depth from Events Cameras: Concentrate and Focus on the Future**"
@@ -173,3 +212,5 @@ The [DSEC website](https://dsec.ifi.uzh.ch) holds the benchmarks and competition
 ## License
 
 MIT license.
+
+</details>
