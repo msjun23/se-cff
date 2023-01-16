@@ -30,7 +30,19 @@ DATA_SPLIT = {
 ```
 
 - **note: no validation set in config, thus can't check validation result**
+</details>
 
+
+<details>
+<summary>0116</summary>
+
+- origin code
+
+- batch size: 16
+
+- datasets: Tiny
+
+- **note: now running**
 </details>
 
 
