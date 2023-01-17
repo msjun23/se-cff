@@ -6,8 +6,8 @@ import torch.utils.data
 from .sequence import Sequence
 
 class DatasetProvider:
-    def __init__(self, dataset_path: Path, delta_t_ms: int=50, num_bins=15, representation='voxel'):
-        self.dataset_path = dataset_path
+    def __init__(self, dataset_path: str, delta_t_ms: int=50, num_bins=15, representation='voxel'):
+        self.dataset_path = Path(dataset_path)
         self.delta_t_ms   = delta_t_ms
         self.num_bins     = num_bins
         self.representation = representation

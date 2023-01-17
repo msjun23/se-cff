@@ -3,10 +3,12 @@ import os
 import torch.nn as nn
 import torch.optim as optim
 import torch.distributed as dist
+from torch.utils.data import DataLoader
 
 from components import models
 from components import datasets
 from components import methods
+from components.datasets.provider import DatasetProvider
 
 from utils.logger import ExpLogger, TimeCheck
 from utils.metric import SummationMeter, Metric
@@ -41,10 +43,20 @@ class DLManager:
     def train(self):
         if self.args.is_master:
             self._log_before_train()
-        train_loader = self.get_train_loader(args=self.args,
-                                             dataset_cfg=self.cfg.DATASET.TRAIN,
-                                             dataloader_cfg=self.cfg.DATALOADER.TRAIN,
-                                             is_distributed=self.args.is_distributed)
+        # train_loader = self.get_train_loader(args=self.args,
+        #                                      dataset_cfg=self.cfg.DATASET.TRAIN,
+        #                                      dataloader_cfg=self.cfg.DATALOADER.TRAIN,
+        #                                      is_distributed=self.args.is_distributed)
+        # Voxel like tensor as input
+        dataset_provider = DatasetProvider(dataset_path=self.args.data_root, 
+                                           num_bins=15) # Voxel like tensor
+        train_dataset = dataset_provider.get_train_dataset()
+        train_loader  = DataLoader(
+            dataset=train_dataset, 
+            batch_size=self.cfg.DATALOADER.TRAIN.PARAMS.batch_size, 
+            shuffle=self.cfg.DATALOADER.TRAIN.PARAMS.shuffle, 
+            num_workers=self.args.num_workers, 
+            drop_last=self.cfg.DATALOADER.TRAIN.PARAMS.drop_last)
 
         time_checker = TimeCheck(self.cfg.TOTAL_EPOCH)
         time_checker.start()
@@ -67,9 +79,18 @@ class DLManager:
 
     def test(self):
         if self.args.is_master:
-            test_loader = self.get_test_loader(args=self.args,
-                                               dataset_cfg=self.cfg.DATASET.TEST,
-                                               dataloader_cfg=self.cfg.DATALOADER.TEST)
+            # test_loader = self.get_test_loader(args=self.args,
+            #                                    dataset_cfg=self.cfg.DATASET.TEST,
+            #                                    dataloader_cfg=self.cfg.DATALOADER.TEST)
+            dataset_provider = DatasetProvider(dataset_path=self.args.data_root, 
+                                               num_bins=15) # Voxel like tensor
+            test_dataset = dataset_provider.get_test_dataset()
+            test_loader  = DataLoader(
+                dataset=test_dataset, 
+                batch_size=self.cfg.DATALOADER.TEST.PARAMS.batch_size, 
+                shuffle=self.cfg.DATALOADER.TEST.PARAMS.shuffle, 
+                num_workers=self.args.num_workers, 
+                drop_last=self.cfg.DATALOADER.TEST.PARAMS.drop_last)
 
             self.logger.test()
 
