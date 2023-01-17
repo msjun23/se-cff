@@ -1,0 +1,12 @@
+--config_path /root/code/configs/config.yaml \
+--data_root /root/data/DSEC \
+--save_root /root/code/save \
+--num_workers 1 \
+--save_term 25 \
+--local_rank 0 \
+--is_distributed True \
+--is_master True \
+--device cuda:0 \
+--world_size 2 \
+--rank 0 \
+

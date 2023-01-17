@@ -21,6 +21,8 @@ DATA_SPLIT = {
 
 - origin code
 
+- GPU: A6000 48GB (Loacl)
+
 - batch size: 4
 
 - datasets: 
@@ -37,6 +39,8 @@ DATA_SPLIT = {
 <summary>0116</summary>
 
 - origin code
+
+- GPU: A6000 48GB * 2 (Server)
 
 - batch size: 16
 
