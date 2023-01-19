@@ -55,6 +55,9 @@ class ExpLogger:
 
     def train(self):
         self._mode = 'train'
+        
+    def validation(self):
+        self._mode = 'validation'
 
     def test(self):
         self._mode = 'test'

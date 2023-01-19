@@ -78,7 +78,7 @@ def validation(model, data_loader):
         log_dict['2PE'].update(pred, batch_data['disparity'], mask)
         log_dict['RMSE'].update(pred, batch_data['disparity'], mask)
 
-    return 
+    return log_dict
 
 
 @torch.no_grad()
