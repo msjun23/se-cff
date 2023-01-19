@@ -17,36 +17,12 @@ DATA_SPLIT = {
 
 
 <details>
-<summary>0112</summary>
-
-- origin code
-
-- GPU: A6000 48GB (Loacl)
-
-- batch size: 4
-
-- datasets: 
-```python
-'trainval': ['train/interlaken_00_d',  'train/zurich_city_00_b', 'train/zurich_city_02_a', 'train/zurich_city_04_b',
-             'train/zurich_city_06_a', 'train/zurich_city_09_e'],
-```
-
-- **note: no validation set in config, thus can't check validation result**
-</details>
-
-
-<details>
 <summary>0116</summary>
-
 - origin code
 
 - GPU: A6000 48GB * 2 (Server)
 
 - batch size: 16
-
-- datasets: Tiny
-
-- **note: now running**
 </details>
 
 

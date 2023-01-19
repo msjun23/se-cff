@@ -56,19 +56,19 @@ DATALOADER:
   TRAIN:
     NAME: get_multi_epochs_dataloader
     PARAMS:
-      batch_size: 4
+      batch_size: 8
       shuffle: True
       drop_last: True
   VALIDATION:
     NAME: get_sequence_dataloader
     PARAMS:
-      batch_size: 4
+      batch_size: 8
       shuffle: False
       drop_last: False
   TEST:
     NAME: get_sequence_dataloader
     PARAMS:
-      batch_size: 4
+      batch_size: 8
       shuffle: False
       drop_last: False
 MODEL:
