@@ -33,17 +33,18 @@ class ConvSNN(nn.Module):
                               spike_grad=spike_grad, 
                               init_hidden=False, 
                               output=False)
+        self.mem = self.lif.init_leaky()
         
     def forward(self, x):
-        mem = self.lif.init_leaky()
+        # mem = self.lif.init_leaky()
         # utils.reset(self.block)
         
         out = self.conv(x)
         out = self.bn(out)
-        spk, mem = self.lif(out, mem)
+        spk, self.mem = self.lif(out, self.mem)
         # spk, mem = self.block(x)
         
-        return spk, mem
+        return spk, self.mem
     
 class UpBlock(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, padding):
