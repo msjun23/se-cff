@@ -1,4 +1,5 @@
 import os
+import copy
 
 import torch.nn as nn
 import torch.optim as optim
@@ -34,6 +35,7 @@ class DLManager:
         self.scheduler = _prepare_scheduler(self.cfg.SCHEDULER, self.optimizer)
 
         self.get_train_loader = getattr(datasets, self.cfg.DATASET.TRAIN.NAME).get_dataloader
+        self.get_validation_loader = getattr(datasets, self.cfg.DATASET.VALIDATION.NAME).get_dataloader
         self.get_test_loader = getattr(datasets, self.cfg.DATASET.TEST.NAME).get_dataloader
 
         self.method = getattr(methods, self.cfg.METHOD)
@@ -64,6 +66,49 @@ class DLManager:
                 train_log_dict = self._gather_log(train_log_dict)
             if self.args.is_master:
                 self._log_after_epoch(epoch + 1, time_checker, train_log_dict, 'train')
+                
+    def validation(self):
+        validation_loader = self.get_validation_loader(args=self.args,
+                                                       dataset_cfg=self.cfg.DATASET.VALIDATION,
+                                                       dataloader_cfg=self.cfg.DATALOADER.VALIDATION)
+        self.logger.validation()
+        total_log_dict = None
+        save_log_dict = {}
+
+        for sequence_dataloader in validation_loader:
+            sequence_name = sequence_dataloader.dataset.sequence_name
+            sequence_log_dict, sequence_pred_list = self.method.validation(args=self.args,
+                                                                           model=self.model,
+                                                                           data_loader=sequence_dataloader)
+
+            sequence_log = '%25s' % sequence_name
+            for key in sequence_log_dict.keys():
+                sequence_log += ' | %s: %s' % (key, str(sequence_log_dict[key]))
+            self.logger.write(log=sequence_log)
+
+            if total_log_dict is None:
+                total_log_dict = copy.copy(sequence_log_dict)
+            else:
+                for key in total_log_dict.keys():
+                    total_log_dict[key] = total_log_dict[key] + sequence_log_dict[key]
+            save_log_dict[sequence_name] = sequence_log_dict
+
+            for cur_pred_dict in sequence_pred_list:
+                file_name = cur_pred_dict.pop('file_name')
+                for key in cur_pred_dict:
+                    self.logger.save_visualize(image=cur_pred_dict[key],
+                                               visual_type=key,
+                                               sequence_name=os.path.join('validation', sequence_name),
+                                               image_name=file_name)
+
+        total_log = '%25s' % 'Total'
+        for key in total_log_dict.keys():
+            total_log += ' | %s: %s' % (key, str(total_log_dict[key]))
+        self.logger.write(log=total_log)
+
+        save_log_dict['Total'] = total_log_dict
+
+        self.logger.save_file(save_log_dict, 'validation_results.pth')
 
     def test(self):
         if self.args.is_master:

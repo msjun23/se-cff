@@ -33,7 +33,7 @@ DATASET:
           stack_size: 10
           use_preprocessed_image: True
       disparity_cfg:
-        NAME: none
+        NAME: base
         PARAMS: { }
   TEST:
     NAME: dsec
