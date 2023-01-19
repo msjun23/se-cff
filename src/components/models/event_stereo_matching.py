@@ -4,6 +4,7 @@ import torch.nn.functional as F
 from einops import rearrange
 
 from .concentration import ConcentrationNet
+from .spiking_concentration import SpikingConcentrationNet
 from .stereo_matching import StereoMatchingNetwork
 
 from torchvision.transforms.functional import to_pil_image
@@ -14,6 +15,7 @@ class EventStereoMatchingNetwork(nn.Module):
                  disparity_estimator=None):
         super(EventStereoMatchingNetwork, self).__init__()
         self.concentration_net = ConcentrationNet(**concentration_net.PARAMS)
+        # self.spiking_concentraion_net = SpikingConcentrationNet(**concentration_net.PARAMS)
         self.stereo_matching_net = StereoMatchingNetwork(**disparity_estimator.PARAMS)
 
         self.criterion = nn.SmoothL1Loss(reduction='none')
@@ -24,17 +26,29 @@ class EventStereoMatchingNetwork(nn.Module):
             'r': right_event.clone(),
         }
         concentrated_event_stack = {}
+        spiking_concentrated_event_stack = {}
         for loc in ['l', 'r']:
             event_stack[loc] = rearrange(event_stack[loc], 'b c h w t s -> b (c s t) h w')
             concentrated_event_stack[loc] = self.concentration_net(event_stack[loc])
             for i in range(len(concentrated_event_stack[loc])):                         # save event stack images
                 img = to_pil_image(concentrated_event_stack[loc][i])
                 img.save(f'../save/event_stack/{loc}/{loc}_pil_img_{i}.jpg', 'JPEG')
+            
+            # event_stack[loc] = rearrange(event_stack[loc], 'b c h w t s -> (s t) b c h w')
+            # spiking_concentrated_event_stack[loc] = self.spiking_concentraion_net(event_stack[loc])
+            # for i in range(len(spiking_concentrated_event_stack[loc])):                 # save event stack images
+            #     img = to_pil_image(spiking_concentrated_event_stack[loc][i])
+            #     img.save(f'../save/event_stack/{loc}/{loc}_pil_img_{i}.jpg', 'JPEG')
 
         pred_disparity_pyramid = self.stereo_matching_net(
             concentrated_event_stack['l'],
             concentrated_event_stack['r']
         )
+        
+        # pred_disparity_pyramid = self.stereo_matching_net(
+        #     spiking_concentrated_event_stack['l'],
+        #     spiking_concentrated_event_stack['r']
+        # )
 
         loss_disp = None
         if gt_disparity is not None:
