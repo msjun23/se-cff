@@ -19,11 +19,42 @@ DATA_SPLIT = {
 <details>
 <summary>0116</summary>
 
-- origin code
+- Origin code
 
 - GPU: A6000 48GB * 2 (Server)
 
-- batch size: 16
+- Batch size: 16
+
+- Note: without validation code
+</details>
+
+
+<details>
+<summary><b>0119</b></summary>
+
+- Origin code
+
+- GPU: A6000 48GB * 2 (Server)
+
+- Batch size: 16
+
+- **Train result:**
+
+|Scene|Loss|EPE|1PE|2PE|RMSE|
+|-----|----|---|---|---|----|
+Final | Loss:  1.344 | EPE:  0.577 | 1PE: 12.269 | 2PE:  3.160 | RMSE:  1.275
+
+- **Validation result:**
+
+|Scene|Loss|EPE|1PE|2PE|RMSE|
+|-----|----|---|---|---|----|
+interlaken_00_f | Loss:  2.480 | EPE:  0.895 | 1PE: 20.700 | 2PE:  7.145 | RMSE:  2.060
+thun_00_a | Loss:  3.036 | EPE:  1.019 | 1PE: 21.756 | 2PE:  7.173 | RMSE:  2.521
+zurich_city_05_a | Loss:  2.405 | EPE:  0.860 | 1PE: 21.043 | 2PE:  6.825 | RMSE:  1.869
+zurich_city_07_a | Loss:  1.486 | EPE:  0.637 | 1PE: 14.627 | 2PE:  2.963 | RMSE:  1.312
+zurich_city_10_b | Loss:  2.325 | EPE:  0.842 | 1PE: 21.508 | 2PE:  7.359 | RMSE:  1.800
+**Total** | **Loss:  2.231** | **EPE:  0.822** | **1PE: 19.873** | **2PE:  6.308** | **RMSE:  1.794**
+
 </details>
 
 
