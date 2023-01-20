@@ -54,6 +54,7 @@ def train(model, data_loader, optimizer, is_distributed=False, world_size=1):
 @torch.no_grad()
 def validation(model, data_loader):
     model.eval()
+    pred_list = []
 
     log_dict = OrderedDict([
         ('Loss', AverageMeter(string_format='%6.3lf')),
@@ -77,8 +78,19 @@ def validation(model, data_loader):
         log_dict['1PE'].update(pred, batch_data['disparity'], mask)
         log_dict['2PE'].update(pred, batch_data['disparity'], mask)
         log_dict['RMSE'].update(pred, batch_data['disparity'], mask)
+        
+        for idx in range(pred.size(0)):
+            width = data_loader.dataset.WIDTH
+            height = data_loader.dataset.HEIGHT
+            cur_pred = pred[idx, :height, :width].cpu()
+            cur_pred_dict = {
+                'file_name': str(batch_data['file_index'][idx].item()).zfill(6) + '.png',
+                'pred': visualizer.tensor_to_disparity_image(cur_pred),
+                'pred_magma': visualizer.tensor_to_disparity_magma_image(cur_pred, vmax=100),
+            }
+            pred_list.append(cur_pred_dict)
 
-    return log_dict
+    return log_dict, pred_list
 
 
 @torch.no_grad()

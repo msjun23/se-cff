@@ -77,8 +77,8 @@ class DLManager:
 
         for sequence_dataloader in validation_loader:
             sequence_name = sequence_dataloader.dataset.sequence_name
-            sequence_log_dict = self.method.validation(model=self.model,
-                                                       data_loader=sequence_dataloader)
+            sequence_log_dict, sequence_pred_list = self.method.validation(model=self.model,
+                                                                           data_loader=sequence_dataloader)
 
             sequence_log = '%25s' % sequence_name
             for key in sequence_log_dict.keys():
@@ -92,13 +92,13 @@ class DLManager:
                     total_log_dict[key] = total_log_dict[key] + sequence_log_dict[key]
             save_log_dict[sequence_name] = sequence_log_dict
 
-            # for cur_pred_dict in sequence_pred_list:
-            #     file_name = cur_pred_dict.pop('file_name')
-            #     for key in cur_pred_dict:
-            #         self.logger.save_visualize(image=cur_pred_dict[key],
-            #                                    visual_type=key,
-            #                                    sequence_name=os.path.join('validation', sequence_name),
-            #                                    image_name=file_name)
+            for cur_pred_dict in sequence_pred_list:
+                file_name = cur_pred_dict.pop('file_name')
+                for key in cur_pred_dict:
+                    self.logger.save_visualize(image=cur_pred_dict[key],
+                                               visual_type=key,
+                                               sequence_name=os.path.join('validation', sequence_name),
+                                               image_name=file_name)
 
         total_log = '%25s' % 'Total'
         for key in total_log_dict.keys():

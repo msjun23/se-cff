@@ -37,4 +37,5 @@ cfg = get_cfg(args.config_path)
 
 exp_manager = DLManager(args, cfg)
 exp_manager.train()
+exp_manager.validation()
 exp_manager.test()
