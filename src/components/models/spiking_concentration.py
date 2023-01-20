@@ -11,18 +11,6 @@ class ConvSNN(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, padding, bias=False, 
                  beta=0.5, spike_grad=surrogate.fast_sigmoid(slope=0.75)):
         super(ConvSNN, self).__init__()
-        # self.block = nn.Sequential(*[
-        #     nn.Conv2d(in_channels=in_channels, 
-        #               out_channels=out_channels, 
-        #               kernel_size=kernel_size, 
-        #               padding=padding, 
-        #               bias=bias), 
-        #     nn.BatchNorm2d(out_channels), 
-        #     snn.Leaky(beta=beta, 
-        #               spike_grad=spike_grad, 
-        #               init_hidden=True, 
-        #               output=True)
-        # ])
         self.conv = nn.Conv2d(in_channels=in_channels, 
                               out_channels=out_channels, 
                               kernel_size=kernel_size, 
@@ -33,18 +21,22 @@ class ConvSNN(nn.Module):
                               spike_grad=spike_grad, 
                               init_hidden=False, 
                               output=False)
-        self.mem = self.lif.init_leaky()
         
     def forward(self, x):
-        # mem = self.lif.init_leaky()
-        # utils.reset(self.block)
+        mem = self.lif.init_leaky()
+        spk_rec = []
+        mem_rec = []
         
         out = self.conv(x)
         out = self.bn(out)
-        spk, self.mem = self.lif(out, self.mem)
-        # spk, mem = self.block(x)
-        
-        return spk, self.mem
+        for step in range(out.size(1)):
+            spk, mem = self.lif(out[:,step,:,:].unsqueeze(dim=1), mem)
+            spk_rec.append(spk)
+            mem_rec.append(mem)
+            
+        spk = torch.cat(spk_rec, dim=1)
+        mem = torch.cat(mem_rec, dim=1)
+        return spk, mem
     
 class UpBlock(nn.Module):
     def __init__(self, in_channels, out_channels, kernel_size, padding):
@@ -118,30 +110,20 @@ class SpikingConcentrationNet(nn.Module):
         self.last_csnn = ConvSNN(in_channels=base_channels, out_channels=in_channels, kernel_size=(3,3), padding=(1,1))
         
     def forward(self, x):
-        # x = x.transpose(0, 1)       # [timestep, batch_size, h, w]
-        # x = x.unsqueeze(dim=2)      # [timestep, batch_size, 1, h, w], 1=in_channels(c)
-        time_step = x.size(0)       # timestep
-        rec = []
+        spk1, mem1 = self.csnn1(x)
+        spk2, mem2 = self.csnn2(mem1)
         
-        for step in range(time_step):
-            spk1, mem1 = self.csnn1(x[step])    # x[step]: [batch_size, 1, h, w]
-            spk2, mem2 = self.csnn2(mem1)
-            
-            b1 = self.down1(mem2)
-            b2 = self.down2(b1)
-            b3 = self.down3(b2)
-            
-            out = self.up1(b3, b2)
-            out = self.up2(out, b1)
-            out = self.up3(out, mem2)
-            
-            spk_out, mem_out = self.last_csnn(out)  # [batch_size, 1, h, w]
-            
-            rec.append(mem_out)                     # [[batch_size, 1, h, w] * step]
-            
-        out = torch.cat(rec, dim=1) # [batch_size, timestep, h, w]
+        b1 = self.down1(mem2)
+        b2 = self.down2(b1)
+        b3 = self.down3(b2)
         
-        x = rearrange(x, 't b c h w -> b (c t) h w')
+        out = self.up1(b3, b2)
+        out = self.up2(out, b1)
+        out = self.up3(out, mem2)
+        
+        spk_out, mem_out = self.last_csnn(out)
+        out = mem_out
+        
         if self.attention_method == 'hard':
             hard_attention = out.max(dim=1)[1]
 
