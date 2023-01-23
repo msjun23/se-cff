@@ -59,6 +59,35 @@ zurich_city_10_b | 2.325 | 0.842 | 21.508 | 7.359 | 1.800
 
 
 <details>
+<summary><b>0120</b></summary>
+
+- SNN Mechanism, {Conv -> LIF} at ConvSNN block, applied LIF node for all convolution.
+
+- GPU: A6000 48GB * 2 (Server)
+
+- Batch size: 16
+
+- **Train result:**
+
+|Scene|Loss|EPE|1PE|2PE|RMSE|
+|-----|----|---|---|---|----|
+Final | 1.381 | 0.588 | 12.658 | 3.273 | 1.291
+
+- **Validation result:**
+
+|Scene|Loss|EPE|1PE|2PE|RMSE|
+|-----|----|---|---|---|----|
+interlaken_00_f | 2.750 | 0.962 | 21.835 | 7.657 | 2.261
+thun_00_a | 3.235 | 1.068 | 21.910 | 7.417 | 2.613
+zurich_city_05_a | 2.531 | 0.890 | 21.730 | 7.104 | 1.948
+zurich_city_07_a | 1.571 | 0.654 | 15.463 | 3.140 | 1.348
+zurich_city_10_b | 2.429 | 0.866 | 22.389 | 7.824 | 1.845
+**Total** | **2.372** | **0.855** | **20.727** | **6.674** | **1.879**
+
+</details>
+
+
+<details>
   <summary>SE-CFF details</summary>
 
 # SE-CFF 

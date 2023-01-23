@@ -1,0 +1,102 @@
+DATALOADER:
+  TEST:
+    NAME: get_sequence_dataloader
+    PARAMS:
+      batch_size: 16
+      drop_last: False
+      shuffle: False
+  TRAIN:
+    NAME: get_multi_epochs_dataloader
+    PARAMS:
+      batch_size: 16
+      drop_last: True
+      shuffle: True
+  VALIDATION:
+    NAME: get_sequence_dataloader
+    PARAMS:
+      batch_size: 16
+      drop_last: False
+      shuffle: False
+DATASET:
+  TEST:
+    NAME: dsec
+    PARAMS:
+      crop_height: 480
+      crop_width: 648
+      disparity_cfg:
+        NAME: none
+        PARAMS:
+          
+      event_cfg:
+        NAME: sbn
+        PARAMS:
+          num_of_event: 5000000
+          stack_method: MixedDensityEventStacking
+          stack_size: 10
+          use_preprocessed_image: True
+      sampling_ratio: 1
+      split: test
+  TRAIN:
+    NAME: dsec
+    PARAMS:
+      crop_height: 432
+      crop_width: 576
+      disparity_cfg:
+        NAME: base
+        PARAMS:
+          
+      event_cfg:
+        NAME: sbn
+        PARAMS:
+          num_of_event: 5000000
+          stack_method: MixedDensityEventStacking
+          stack_size: 10
+          use_preprocessed_image: True
+      sampling_ratio: 1
+      split: train
+  VALIDATION:
+    NAME: dsec
+    PARAMS:
+      crop_height: 480
+      crop_width: 648
+      disparity_cfg:
+        NAME: base
+        PARAMS:
+          
+      event_cfg:
+        NAME: sbn
+        PARAMS:
+          num_of_event: 5000000
+          stack_method: MixedDensityEventStacking
+          stack_size: 10
+          use_preprocessed_image: True
+      sampling_ratio: 1
+      split: validation
+METHOD: base
+MODEL:
+  NAME: EventStereoMatchingNetwork
+  PARAMS:
+    concentration_net:
+      PARAMS:
+        attention_method: soft
+        base_channels: 32
+        in_channels: 10
+    disparity_estimator:
+      PARAMS:
+        in_channels: 1
+        max_disp: 192
+        refine_channels: 1
+OPTIMIZER:
+  NAME: Adam
+  PARAMS:
+    lr: 0.0005
+    weight_decay: 0.0001
+SCHEDULER:
+  NAME: CosineAnnealingWarmupRestarts
+  PARAMS:
+    cycle_mult: 1.0
+    first_cycle_steps: 100
+    gamma: 1.0
+    lr_ratio: 0.0001
+    warmup_steps: 3
+TOTAL_EPOCH: 100

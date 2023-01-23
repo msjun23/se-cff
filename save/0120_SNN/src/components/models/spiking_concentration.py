@@ -1,0 +1,145 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+
+import snntorch as snn
+from snntorch import surrogate, utils
+
+from einops import rearrange
+
+class ConvSNN(nn.Module):
+    def __init__(self, in_channels, out_channels, kernel_size, padding, bias=False, 
+                 beta=0.5, spike_grad=surrogate.fast_sigmoid(slope=0.75)):
+        super(ConvSNN, self).__init__()
+        self.conv = nn.Conv2d(in_channels=in_channels, 
+                              out_channels=out_channels, 
+                              kernel_size=kernel_size, 
+                              padding=padding, 
+                              bias=bias)
+        self.bn   = nn.BatchNorm2d(out_channels)
+        self.lif  = snn.Leaky(beta=beta, 
+                              spike_grad=spike_grad, 
+                              init_hidden=False, 
+                              output=False)
+        
+    def forward(self, x):
+        mem = self.lif.init_leaky()
+        spk_rec = []
+        mem_rec = []
+        
+        out = self.conv(x)
+        out = self.bn(out)
+        for step in range(out.size(1)):
+            spk, mem = self.lif(out[:,step,:,:].unsqueeze(dim=1), mem)
+            spk_rec.append(spk)
+            mem_rec.append(mem)
+            
+        spk = torch.cat(spk_rec, dim=1)
+        mem = torch.cat(mem_rec, dim=1)
+        return spk, mem
+    
+class UpBlock(nn.Module):
+    def __init__(self, in_channels, out_channels, kernel_size, padding):
+        super(UpBlock, self).__init__()
+        self.csnn1 = ConvSNN(in_channels=in_channels, 
+                             out_channels=out_channels, 
+                             kernel_size=kernel_size, 
+                             padding=padding)
+        self.csnn2 = ConvSNN(in_channels=2*out_channels, 
+                             out_channels=out_channels, 
+                             kernel_size=kernel_size, 
+                             padding=padding)
+        self.csnn3 = ConvSNN(in_channels=out_channels, 
+                             out_channels=out_channels, 
+                             kernel_size=kernel_size, 
+                             padding=padding)
+        
+    def forward(self, x, past):
+        out = F.interpolate(x, scale_factor=(2,2))
+        spk, mem = self.csnn1(out)
+        spk, mem = self.csnn2(torch.cat([mem, past], dim=1))
+        spk, mem = self.csnn3(mem)
+        
+        return mem
+    
+class DownBlock(nn.Module):
+    def __init__(self, in_channels, out_channels, kernel_size, padding):
+        super(DownBlock, self).__init__()
+        self.csnn1 = ConvSNN(in_channels=in_channels, 
+                             out_channels=out_channels, 
+                             kernel_size=kernel_size, 
+                             padding=padding)
+        self.csnn2 = ConvSNN(in_channels=out_channels, 
+                             out_channels=out_channels, 
+                             kernel_size=kernel_size, 
+                             padding=padding)
+        self.csnn3 = ConvSNN(in_channels=out_channels, 
+                             out_channels=out_channels, 
+                             kernel_size=kernel_size, 
+                             padding=padding)
+        
+    def forward(self, x):
+        out = F.avg_pool2d(x, (2,2))
+        spk, mem = self.csnn1(out)
+        spk, mem = self.csnn2(mem)
+        spk, mem = self.csnn3(mem)
+        
+        return mem
+
+class SpikingConcentrationNet(nn.Module):
+    def __init__(self, in_channels=1, base_channels=32, attention_method='soft'):
+        super(SpikingConcentrationNet, self).__init__()
+        
+        b1_channels = 2 * base_channels
+        b2_channels = 2 * b1_channels
+        b3_channels = 2 * b2_channels
+        
+        self.attention_method = attention_method
+        
+        self.csnn1 = ConvSNN(in_channels=in_channels, out_channels=base_channels, kernel_size=(3,3), padding=(1,1))
+        self.csnn2 = ConvSNN(in_channels=base_channels, out_channels=base_channels, kernel_size=(3,3), padding=(1,1))
+        
+        self.down1 = DownBlock(in_channels=base_channels, out_channels=b1_channels, kernel_size=(3,3), padding=(1,1))
+        self.down2 = DownBlock(in_channels=b1_channels, out_channels=b2_channels, kernel_size=(3,3), padding=(1,1))
+        self.down3 = DownBlock(in_channels=b2_channels, out_channels=b3_channels, kernel_size=(3,3), padding=(1,1))
+        
+        self.up1   = UpBlock(in_channels=b3_channels, out_channels=b2_channels, kernel_size=(3,3), padding=(1,1))
+        self.up2   = UpBlock(in_channels=b2_channels, out_channels=b1_channels, kernel_size=(3,3), padding=(1,1))
+        self.up3   = UpBlock(in_channels=b1_channels, out_channels=base_channels, kernel_size=(3,3), padding=(1,1))
+        
+        self.last_csnn = ConvSNN(in_channels=base_channels, out_channels=in_channels, kernel_size=(3,3), padding=(1,1))
+        
+    def forward(self, x):
+        spk1, mem1 = self.csnn1(x)
+        spk2, mem2 = self.csnn2(mem1)
+        
+        b1 = self.down1(mem2)
+        b2 = self.down2(b1)
+        b3 = self.down3(b2)
+        
+        out = self.up1(b3, b2)
+        out = self.up2(out, b1)
+        out = self.up3(out, mem2)
+        
+        spk_out, mem_out = self.last_csnn(out)
+        out = mem_out
+        
+        if self.attention_method == 'hard':
+            hard_attention = out.max(dim=1)[1]
+
+            new_x = x[
+                torch.arange(x.size(0), device='cuda').view(x.size(0), 1, 1, 1),
+                torch.stack([hard_attention] * x.size(1), dim=1),
+                torch.arange(x.size(2), device='cuda').view(1, 1, x.size(2), 1),
+                torch.arange(x.size(3), device='cuda').view(1, 1, 1, x.size(3)),
+            ]
+            new_x = new_x.squeeze(dim=4).contiguous()
+        elif self.attention_method == 'soft':
+            soft_attention = F.softmax(out, dim=1)
+            new_x = x * soft_attention
+            new_x = new_x.sum(dim=1, keepdim=True).contiguous()
+        else:
+            raise NotImplementedError
+
+        return new_x
+    
