@@ -88,6 +88,35 @@ zurich_city_10_b | 2.429 | 0.866 | 22.389 | 7.824 | 1.845
 
 
 <details>
+<summary><b>0123</b></summary>
+
+- SNN Mechanism, LIF neuron after only first two conv layers.
+
+- GPU: A6000 48GB * 2 (Server)
+
+- Batch size: 4
+
+- **Train result:**
+
+|Scene|Loss|EPE|1PE|2PE|RMSE|
+|-----|----|---|---|---|----|
+Final | 1.185 | 0.527 | 10.651 | 2.635 | 1.167
+
+- **Validation result:**
+
+|Scene|Loss|EPE|1PE|2PE|RMSE|
+|-----|----|---|---|---|----|
+interlaken_00_f | 2.449 | 0.882 | 19.192 | 6.871 | 2.058
+thun_00_a | 2.567 | 0.903 | 20.124 | 5.925 | 2.211
+zurich_city_05_a | 2.167 | 0.805 | 19.720 | 6.184 | 1.719
+zurich_city_07_a | 1.348 | 0.603 | 13.544 | 2.534 | 1.234
+zurich_city_10_b | 2.079 | 0.783 | 19.618 | 6.380 | 1.689
+**Total** | **2.045** | **0.776** | **18.365** | **5.653** | **1.696**
+
+</details>
+
+
+<details>
   <summary>SE-CFF details</summary>
 
 # SE-CFF 

@@ -1,0 +1,304 @@
+2023-01-23 07:52:32 : Epoch: 1 | time per epoch: 00:49:03 | eta: 80:56:00
+2023-01-23 07:52:32 : train | Loss: 272.685 | EPE: 70.936 | 1PE: 99.965 | 2PE: 99.929 | RMSE: 72.962
+2023-01-23 07:52:32 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 08:41:36 : Epoch: 2 | time per epoch: 00:49:03 | eta: 80:07:30
+2023-01-23 08:41:36 : train | Loss: 29.857 | EPE:  5.716 | 1PE: 76.069 | 2PE: 57.636 | RMSE:  8.632
+2023-01-23 08:41:36 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 09:30:41 : Epoch: 3 | time per epoch: 00:49:04 | eta: 79:19:35
+2023-01-23 09:30:41 : train | Loss: 14.564 | EPE:  2.892 | 1PE: 60.438 | 2PE: 36.275 | RMSE:  4.906
+2023-01-23 09:30:42 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 10:19:45 : Epoch: 4 | time per epoch: 00:49:03 | eta: 78:30:12
+2023-01-23 10:19:45 : train | Loss:  8.943 | EPE:  2.129 | 1PE: 52.293 | 2PE: 27.523 | RMSE:  3.747
+2023-01-23 10:19:45 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 11:08:51 : Epoch: 5 | time per epoch: 00:49:04 | eta: 77:41:48
+2023-01-23 11:08:51 : train | Loss:  7.066 | EPE:  1.791 | 1PE: 47.036 | 2PE: 22.588 | RMSE:  3.243
+2023-01-23 11:08:51 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 11:57:54 : Epoch: 6 | time per epoch: 00:49:04 | eta: 76:52:31
+2023-01-23 11:57:54 : train | Loss:  6.412 | EPE:  1.708 | 1PE: 44.895 | 2PE: 20.792 | RMSE:  3.160
+2023-01-23 11:57:54 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 12:47:00 : Epoch: 7 | time per epoch: 00:49:04 | eta: 76:03:57
+2023-01-23 12:47:00 : train | Loss:  5.658 | EPE:  1.570 | 1PE: 42.112 | 2PE: 18.521 | RMSE:  2.943
+2023-01-23 12:47:01 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 13:36:08 : Epoch: 8 | time per epoch: 00:49:04 | eta: 75:15:24
+2023-01-23 13:36:08 : train | Loss:  5.641 | EPE:  1.568 | 1PE: 41.265 | 2PE: 17.998 | RMSE:  2.983
+2023-01-23 13:36:08 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 14:25:13 : Epoch: 9 | time per epoch: 00:49:04 | eta: 74:26:22
+2023-01-23 14:25:13 : train | Loss:  5.013 | EPE:  1.442 | 1PE: 38.302 | 2PE: 15.788 | RMSE:  2.820
+2023-01-23 14:25:13 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 15:14:17 : Epoch: 10 | time per epoch: 00:49:04 | eta: 73:37:10
+2023-01-23 15:14:17 : train | Loss:  4.526 | EPE:  1.337 | 1PE: 36.258 | 2PE: 14.283 | RMSE:  2.641
+2023-01-23 15:14:17 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 16:03:25 : Epoch: 11 | time per epoch: 00:49:05 | eta: 72:48:35
+2023-01-23 16:03:25 : train | Loss:  4.546 | EPE:  1.352 | 1PE: 36.132 | 2PE: 14.215 | RMSE:  2.687
+2023-01-23 16:03:26 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 16:52:37 : Epoch: 12 | time per epoch: 00:49:05 | eta: 72:00:17
+2023-01-23 16:52:37 : train | Loss:  3.997 | EPE:  1.234 | 1PE: 33.630 | 2PE: 12.478 | RMSE:  2.473
+2023-01-23 16:52:37 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 17:41:42 : Epoch: 13 | time per epoch: 00:49:05 | eta: 71:11:05
+2023-01-23 17:41:42 : train | Loss:  3.518 | EPE:  1.130 | 1PE: 30.970 | 2PE: 10.753 | RMSE:  2.299
+2023-01-23 17:41:42 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 18:30:47 : Epoch: 14 | time per epoch: 00:49:05 | eta: 70:21:58
+2023-01-23 18:30:47 : train | Loss:  3.323 | EPE:  1.087 | 1PE: 29.311 | 2PE:  9.915 | RMSE:  2.250
+2023-01-23 18:30:47 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 19:19:54 : Epoch: 15 | time per epoch: 00:49:05 | eta: 69:33:03
+2023-01-23 19:19:54 : train | Loss:  3.278 | EPE:  1.072 | 1PE: 28.487 | 2PE:  9.544 | RMSE:  2.249
+2023-01-23 19:19:55 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 20:08:58 : Epoch: 16 | time per epoch: 00:49:05 | eta: 68:43:47
+2023-01-23 20:08:58 : train | Loss:  2.956 | EPE:  0.995 | 1PE: 26.415 | 2PE:  8.429 | RMSE:  2.100
+2023-01-23 20:08:58 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 20:58:09 : Epoch: 17 | time per epoch: 00:49:05 | eta: 67:55:08
+2023-01-23 20:58:09 : train | Loss:  2.748 | EPE:  0.946 | 1PE: 24.628 | 2PE:  7.631 | RMSE:  2.021
+2023-01-23 20:58:10 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 21:47:15 : Epoch: 18 | time per epoch: 00:49:05 | eta: 67:06:01
+2023-01-23 21:47:15 : train | Loss:  2.678 | EPE:  0.932 | 1PE: 24.089 | 2PE:  7.425 | RMSE:  1.994
+2023-01-23 21:47:15 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 22:36:22 : Epoch: 19 | time per epoch: 00:49:05 | eta: 66:17:03
+2023-01-23 22:36:22 : train | Loss:  2.530 | EPE:  0.895 | 1PE: 23.001 | 2PE:  6.893 | RMSE:  1.923
+2023-01-23 22:36:23 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-23 23:25:34 : Epoch: 20 | time per epoch: 00:49:06 | eta: 65:28:21
+2023-01-23 23:25:34 : train | Loss:  2.528 | EPE:  0.892 | 1PE: 22.683 | 2PE:  6.854 | RMSE:  1.924
+2023-01-23 23:25:35 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 00:14:36 : Epoch: 21 | time per epoch: 00:49:06 | eta: 64:38:57
+2023-01-24 00:14:36 : train | Loss:  2.639 | EPE:  0.922 | 1PE: 23.204 | 2PE:  7.168 | RMSE:  1.998
+2023-01-24 00:14:36 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 01:03:36 : Epoch: 22 | time per epoch: 00:49:05 | eta: 63:49:31
+2023-01-24 01:03:36 : train | Loss:  2.368 | EPE:  0.852 | 1PE: 21.501 | 2PE:  6.302 | RMSE:  1.854
+2023-01-24 01:03:37 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 01:52:40 : Epoch: 23 | time per epoch: 00:49:05 | eta: 63:00:17
+2023-01-24 01:52:40 : train | Loss:  2.268 | EPE:  0.829 | 1PE: 20.842 | 2PE:  6.014 | RMSE:  1.799
+2023-01-24 01:52:40 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 02:41:44 : Epoch: 24 | time per epoch: 00:49:05 | eta: 62:11:08
+2023-01-24 02:41:44 : train | Loss:  2.244 | EPE:  0.823 | 1PE: 20.543 | 2PE:  5.905 | RMSE:  1.794
+2023-01-24 02:41:45 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 03:30:47 : Epoch: 25 | time per epoch: 00:49:05 | eta: 61:21:54
+2023-01-24 03:30:47 : train | Loss:  2.172 | EPE:  0.806 | 1PE: 20.147 | 2PE:  5.712 | RMSE:  1.757
+2023-01-24 03:30:48 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 03:30:48 : Checkpoint is saved to /root/code/save/weights/25.pth
+2023-01-24 04:19:46 : Epoch: 26 | time per epoch: 00:49:05 | eta: 60:32:30
+2023-01-24 04:19:46 : train | Loss:  2.124 | EPE:  0.794 | 1PE: 19.741 | 2PE:  5.541 | RMSE:  1.729
+2023-01-24 04:19:47 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 05:08:51 : Epoch: 27 | time per epoch: 00:49:05 | eta: 59:43:23
+2023-01-24 05:08:51 : train | Loss:  2.116 | EPE:  0.793 | 1PE: 19.612 | 2PE:  5.527 | RMSE:  1.737
+2023-01-24 05:08:51 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 05:57:53 : Epoch: 28 | time per epoch: 00:49:05 | eta: 58:54:09
+2023-01-24 05:57:53 : train | Loss:  2.042 | EPE:  0.775 | 1PE: 19.069 | 2PE:  5.298 | RMSE:  1.690
+2023-01-24 05:57:53 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 06:46:56 : Epoch: 29 | time per epoch: 00:49:05 | eta: 58:04:59
+2023-01-24 06:46:56 : train | Loss:  2.018 | EPE:  0.769 | 1PE: 18.783 | 2PE:  5.227 | RMSE:  1.683
+2023-01-24 06:46:56 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 07:35:55 : Epoch: 30 | time per epoch: 00:49:04 | eta: 57:15:40
+2023-01-24 07:35:55 : train | Loss:  1.952 | EPE:  0.752 | 1PE: 18.315 | 2PE:  5.038 | RMSE:  1.642
+2023-01-24 07:35:55 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 08:24:53 : Epoch: 31 | time per epoch: 00:49:04 | eta: 56:26:20
+2023-01-24 08:24:53 : train | Loss:  1.950 | EPE:  0.751 | 1PE: 18.219 | 2PE:  4.999 | RMSE:  1.646
+2023-01-24 08:24:53 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 09:13:50 : Epoch: 32 | time per epoch: 00:49:04 | eta: 55:36:59
+2023-01-24 09:13:50 : train | Loss:  1.958 | EPE:  0.754 | 1PE: 18.173 | 2PE:  5.007 | RMSE:  1.660
+2023-01-24 09:13:50 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 10:02:52 : Epoch: 33 | time per epoch: 00:49:04 | eta: 54:47:49
+2023-01-24 10:02:52 : train | Loss:  1.872 | EPE:  0.732 | 1PE: 17.585 | 2PE:  4.768 | RMSE:  1.607
+2023-01-24 10:02:52 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 10:51:48 : Epoch: 34 | time per epoch: 00:49:04 | eta: 53:58:30
+2023-01-24 10:51:48 : train | Loss:  1.840 | EPE:  0.723 | 1PE: 17.313 | 2PE:  4.663 | RMSE:  1.586
+2023-01-24 10:51:49 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 11:40:44 : Epoch: 35 | time per epoch: 00:49:03 | eta: 53:09:09
+2023-01-24 11:40:44 : train | Loss:  1.832 | EPE:  0.721 | 1PE: 17.209 | 2PE:  4.650 | RMSE:  1.584
+2023-01-24 11:40:44 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 12:29:38 : Epoch: 36 | time per epoch: 00:49:03 | eta: 52:19:49
+2023-01-24 12:29:38 : train | Loss:  1.798 | EPE:  0.712 | 1PE: 16.891 | 2PE:  4.526 | RMSE:  1.563
+2023-01-24 12:29:39 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 13:18:38 : Epoch: 37 | time per epoch: 00:49:03 | eta: 51:30:38
+2023-01-24 13:18:38 : train | Loss:  1.884 | EPE:  0.733 | 1PE: 17.438 | 2PE:  4.752 | RMSE:  1.618
+2023-01-24 13:18:38 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 14:07:41 : Epoch: 38 | time per epoch: 00:49:03 | eta: 50:41:34
+2023-01-24 14:07:41 : train | Loss:  1.744 | EPE:  0.697 | 1PE: 16.445 | 2PE:  4.376 | RMSE:  1.526
+2023-01-24 14:07:41 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 14:56:41 : Epoch: 39 | time per epoch: 00:49:03 | eta: 49:52:26
+2023-01-24 14:56:41 : train | Loss:  1.729 | EPE:  0.693 | 1PE: 16.284 | 2PE:  4.333 | RMSE:  1.520
+2023-01-24 14:56:42 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 15:45:36 : Epoch: 40 | time per epoch: 00:49:03 | eta: 49:03:10
+2023-01-24 15:45:36 : train | Loss:  1.712 | EPE:  0.690 | 1PE: 16.195 | 2PE:  4.265 | RMSE:  1.515
+2023-01-24 15:45:36 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 16:34:32 : Epoch: 41 | time per epoch: 00:49:03 | eta: 48:13:57
+2023-01-24 16:34:32 : train | Loss:  1.803 | EPE:  0.711 | 1PE: 16.701 | 2PE:  4.513 | RMSE:  1.565
+2023-01-24 16:34:33 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 17:23:39 : Epoch: 42 | time per epoch: 00:49:03 | eta: 47:24:58
+2023-01-24 17:23:39 : train | Loss:  1.677 | EPE:  0.679 | 1PE: 15.748 | 2PE:  4.150 | RMSE:  1.492
+2023-01-24 17:23:39 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 18:12:33 : Epoch: 43 | time per epoch: 00:49:02 | eta: 46:35:44
+2023-01-24 18:12:33 : train | Loss:  1.663 | EPE:  0.674 | 1PE: 15.655 | 2PE:  4.107 | RMSE:  1.480
+2023-01-24 18:12:34 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 19:01:28 : Epoch: 44 | time per epoch: 00:49:02 | eta: 45:46:31
+2023-01-24 19:01:28 : train | Loss:  1.640 | EPE:  0.669 | 1PE: 15.457 | 2PE:  4.051 | RMSE:  1.472
+2023-01-24 19:01:29 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 19:50:23 : Epoch: 45 | time per epoch: 00:49:02 | eta: 44:57:19
+2023-01-24 19:50:23 : train | Loss:  1.638 | EPE:  0.668 | 1PE: 15.406 | 2PE:  4.035 | RMSE:  1.470
+2023-01-24 19:50:24 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 20:39:19 : Epoch: 46 | time per epoch: 00:49:02 | eta: 44:08:08
+2023-01-24 20:39:19 : train | Loss:  1.622 | EPE:  0.663 | 1PE: 15.201 | 2PE:  3.984 | RMSE:  1.465
+2023-01-24 20:39:19 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 21:28:14 : Epoch: 47 | time per epoch: 00:49:02 | eta: 43:18:58
+2023-01-24 21:28:14 : train | Loss:  1.593 | EPE:  0.655 | 1PE: 14.919 | 2PE:  3.880 | RMSE:  1.447
+2023-01-24 21:28:15 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 22:17:17 : Epoch: 48 | time per epoch: 00:49:02 | eta: 42:29:56
+2023-01-24 22:17:17 : train | Loss:  1.585 | EPE:  0.652 | 1PE: 14.801 | 2PE:  3.850 | RMSE:  1.446
+2023-01-24 22:17:17 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 23:06:09 : Epoch: 49 | time per epoch: 00:49:02 | eta: 41:40:44
+2023-01-24 23:06:09 : train | Loss:  1.557 | EPE:  0.645 | 1PE: 14.626 | 2PE:  3.799 | RMSE:  1.423
+2023-01-24 23:06:10 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 23:55:01 : Epoch: 50 | time per epoch: 00:49:01 | eta: 40:51:32
+2023-01-24 23:55:01 : train | Loss:  1.555 | EPE:  0.643 | 1PE: 14.533 | 2PE:  3.771 | RMSE:  1.417
+2023-01-24 23:55:02 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-24 23:55:02 : Checkpoint is saved to /root/code/save/weights/50.pth
+2023-01-25 00:43:53 : Epoch: 51 | time per epoch: 00:49:01 | eta: 40:02:20
+2023-01-25 00:43:53 : train | Loss:  1.538 | EPE:  0.640 | 1PE: 14.371 | 2PE:  3.728 | RMSE:  1.413
+2023-01-25 00:43:53 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 01:32:40 : Epoch: 52 | time per epoch: 00:49:01 | eta: 39:13:05
+2023-01-25 01:32:40 : train | Loss:  1.520 | EPE:  0.633 | 1PE: 14.211 | 2PE:  3.661 | RMSE:  1.397
+2023-01-25 01:32:41 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 02:21:33 : Epoch: 53 | time per epoch: 00:49:01 | eta: 38:23:56
+2023-01-25 02:21:33 : train | Loss:  1.511 | EPE:  0.631 | 1PE: 14.125 | 2PE:  3.652 | RMSE:  1.390
+2023-01-25 02:21:33 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 03:10:25 : Epoch: 54 | time per epoch: 00:49:01 | eta: 37:34:47
+2023-01-25 03:10:25 : train | Loss:  1.499 | EPE:  0.627 | 1PE: 13.966 | 2PE:  3.599 | RMSE:  1.391
+2023-01-25 03:10:25 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 03:59:16 : Epoch: 55 | time per epoch: 00:49:00 | eta: 36:45:38
+2023-01-25 03:59:16 : train | Loss:  1.484 | EPE:  0.622 | 1PE: 13.805 | 2PE:  3.548 | RMSE:  1.374
+2023-01-25 03:59:17 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 04:48:12 : Epoch: 56 | time per epoch: 00:49:00 | eta: 35:56:34
+2023-01-25 04:48:12 : train | Loss:  1.468 | EPE:  0.618 | 1PE: 13.689 | 2PE:  3.504 | RMSE:  1.366
+2023-01-25 04:48:13 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 05:37:11 : Epoch: 57 | time per epoch: 00:49:00 | eta: 35:07:31
+2023-01-25 05:37:11 : train | Loss:  1.455 | EPE:  0.614 | 1PE: 13.552 | 2PE:  3.473 | RMSE:  1.357
+2023-01-25 05:37:11 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 06:26:24 : Epoch: 58 | time per epoch: 00:49:00 | eta: 34:18:39
+2023-01-25 06:26:24 : train | Loss:  1.453 | EPE:  0.613 | 1PE: 13.443 | 2PE:  3.463 | RMSE:  1.355
+2023-01-25 06:26:25 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 07:15:31 : Epoch: 59 | time per epoch: 00:49:01 | eta: 33:29:43
+2023-01-25 07:15:31 : train | Loss:  1.433 | EPE:  0.608 | 1PE: 13.332 | 2PE:  3.408 | RMSE:  1.342
+2023-01-25 07:15:31 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 08:04:48 : Epoch: 60 | time per epoch: 00:49:01 | eta: 32:40:52
+2023-01-25 08:04:48 : train | Loss:  1.440 | EPE:  0.609 | 1PE: 13.298 | 2PE:  3.411 | RMSE:  1.347
+2023-01-25 08:04:49 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 08:54:08 : Epoch: 61 | time per epoch: 00:49:01 | eta: 31:52:03
+2023-01-25 08:54:08 : train | Loss:  1.403 | EPE:  0.598 | 1PE: 12.993 | 2PE:  3.299 | RMSE:  1.326
+2023-01-25 08:54:09 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 09:43:29 : Epoch: 62 | time per epoch: 00:49:01 | eta: 31:03:13
+2023-01-25 09:43:29 : train | Loss:  1.399 | EPE:  0.598 | 1PE: 12.968 | 2PE:  3.299 | RMSE:  1.322
+2023-01-25 09:43:29 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 10:32:50 : Epoch: 63 | time per epoch: 00:49:02 | eta: 30:14:22
+2023-01-25 10:32:50 : train | Loss:  1.385 | EPE:  0.593 | 1PE: 12.824 | 2PE:  3.257 | RMSE:  1.309
+2023-01-25 10:32:51 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 11:22:07 : Epoch: 64 | time per epoch: 00:49:02 | eta: 29:25:28
+2023-01-25 11:22:07 : train | Loss:  1.377 | EPE:  0.591 | 1PE: 12.726 | 2PE:  3.229 | RMSE:  1.305
+2023-01-25 11:22:07 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 12:11:17 : Epoch: 65 | time per epoch: 00:49:02 | eta: 28:36:30
+2023-01-25 12:11:17 : train | Loss:  1.383 | EPE:  0.591 | 1PE: 12.733 | 2PE:  3.243 | RMSE:  1.309
+2023-01-25 12:11:17 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 13:00:31 : Epoch: 66 | time per epoch: 00:49:02 | eta: 27:47:33
+2023-01-25 13:00:31 : train | Loss:  1.354 | EPE:  0.583 | 1PE: 12.513 | 2PE:  3.155 | RMSE:  1.287
+2023-01-25 13:00:32 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 13:49:51 : Epoch: 67 | time per epoch: 00:49:03 | eta: 26:58:39
+2023-01-25 13:49:51 : train | Loss:  1.342 | EPE:  0.579 | 1PE: 12.355 | 2PE:  3.113 | RMSE:  1.281
+2023-01-25 13:49:52 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 14:39:06 : Epoch: 68 | time per epoch: 00:49:03 | eta: 26:09:42
+2023-01-25 14:39:06 : train | Loss:  1.340 | EPE:  0.579 | 1PE: 12.345 | 2PE:  3.113 | RMSE:  1.283
+2023-01-25 14:39:07 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 15:28:21 : Epoch: 69 | time per epoch: 00:49:03 | eta: 25:20:44
+2023-01-25 15:28:21 : train | Loss:  1.323 | EPE:  0.574 | 1PE: 12.191 | 2PE:  3.068 | RMSE:  1.268
+2023-01-25 15:28:22 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 16:17:40 : Epoch: 70 | time per epoch: 00:49:03 | eta: 24:31:47
+2023-01-25 16:17:40 : train | Loss:  1.326 | EPE:  0.574 | 1PE: 12.162 | 2PE:  3.061 | RMSE:  1.271
+2023-01-25 16:17:40 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 17:06:55 : Epoch: 71 | time per epoch: 00:49:03 | eta: 23:42:48
+2023-01-25 17:06:55 : train | Loss:  1.310 | EPE:  0.569 | 1PE: 12.040 | 2PE:  3.020 | RMSE:  1.257
+2023-01-25 17:06:55 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 17:56:12 : Epoch: 72 | time per epoch: 00:49:03 | eta: 22:53:49
+2023-01-25 17:56:12 : train | Loss:  1.306 | EPE:  0.568 | 1PE: 11.958 | 2PE:  2.999 | RMSE:  1.256
+2023-01-25 17:56:12 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 18:45:34 : Epoch: 73 | time per epoch: 00:49:04 | eta: 22:04:52
+2023-01-25 18:45:34 : train | Loss:  1.294 | EPE:  0.564 | 1PE: 11.857 | 2PE:  2.975 | RMSE:  1.248
+2023-01-25 18:45:34 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 19:34:46 : Epoch: 74 | time per epoch: 00:49:04 | eta: 21:15:51
+2023-01-25 19:34:46 : train | Loss:  1.285 | EPE:  0.561 | 1PE: 11.761 | 2PE:  2.949 | RMSE:  1.241
+2023-01-25 19:34:47 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 20:23:58 : Epoch: 75 | time per epoch: 00:49:04 | eta: 20:26:49
+2023-01-25 20:23:58 : train | Loss:  1.278 | EPE:  0.558 | 1PE: 11.664 | 2PE:  2.914 | RMSE:  1.236
+2023-01-25 20:23:59 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 20:23:59 : Checkpoint is saved to /root/code/save/weights/75.pth
+2023-01-25 21:13:19 : Epoch: 76 | time per epoch: 00:49:04 | eta: 19:37:50
+2023-01-25 21:13:19 : train | Loss:  1.268 | EPE:  0.556 | 1PE: 11.559 | 2PE:  2.893 | RMSE:  1.230
+2023-01-25 21:13:19 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 22:02:30 : Epoch: 77 | time per epoch: 00:49:04 | eta: 18:48:47
+2023-01-25 22:02:30 : train | Loss:  1.262 | EPE:  0.554 | 1PE: 11.526 | 2PE:  2.870 | RMSE:  1.226
+2023-01-25 22:02:30 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 22:51:40 : Epoch: 78 | time per epoch: 00:49:04 | eta: 17:59:44
+2023-01-25 22:51:40 : train | Loss:  1.252 | EPE:  0.551 | 1PE: 11.432 | 2PE:  2.846 | RMSE:  1.218
+2023-01-25 22:51:41 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-25 23:40:52 : Epoch: 79 | time per epoch: 00:49:04 | eta: 17:10:41
+2023-01-25 23:40:52 : train | Loss:  1.264 | EPE:  0.554 | 1PE: 11.458 | 2PE:  2.870 | RMSE:  1.228
+2023-01-25 23:40:53 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 00:30:11 : Epoch: 80 | time per epoch: 00:49:05 | eta: 16:21:40
+2023-01-26 00:30:11 : train | Loss:  1.243 | EPE:  0.548 | 1PE: 11.327 | 2PE:  2.823 | RMSE:  1.210
+2023-01-26 00:30:11 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 01:19:29 : Epoch: 81 | time per epoch: 00:49:05 | eta: 15:32:38
+2023-01-26 01:19:29 : train | Loss:  1.236 | EPE:  0.545 | 1PE: 11.222 | 2PE:  2.794 | RMSE:  1.205
+2023-01-26 01:19:30 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 02:08:41 : Epoch: 82 | time per epoch: 00:49:05 | eta: 14:43:34
+2023-01-26 02:08:41 : train | Loss:  1.234 | EPE:  0.544 | 1PE: 11.183 | 2PE:  2.782 | RMSE:  1.204
+2023-01-26 02:08:42 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 02:57:56 : Epoch: 83 | time per epoch: 00:49:05 | eta: 13:54:31
+2023-01-26 02:57:56 : train | Loss:  1.224 | EPE:  0.541 | 1PE: 11.100 | 2PE:  2.755 | RMSE:  1.192
+2023-01-26 02:57:56 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 03:47:12 : Epoch: 84 | time per epoch: 00:49:05 | eta: 13:05:28
+2023-01-26 03:47:12 : train | Loss:  1.222 | EPE:  0.541 | 1PE: 11.073 | 2PE:  2.755 | RMSE:  1.197
+2023-01-26 03:47:12 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 04:36:28 : Epoch: 85 | time per epoch: 00:49:05 | eta: 12:16:24
+2023-01-26 04:36:28 : train | Loss:  1.221 | EPE:  0.539 | 1PE: 11.023 | 2PE:  2.737 | RMSE:  1.192
+2023-01-26 04:36:28 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 05:25:40 : Epoch: 86 | time per epoch: 00:49:05 | eta: 11:27:19
+2023-01-26 05:25:40 : train | Loss:  1.214 | EPE:  0.537 | 1PE: 10.972 | 2PE:  2.727 | RMSE:  1.189
+2023-01-26 05:25:40 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 06:14:52 : Epoch: 87 | time per epoch: 00:49:05 | eta: 10:38:15
+2023-01-26 06:14:52 : train | Loss:  1.208 | EPE:  0.536 | 1PE: 10.929 | 2PE:  2.714 | RMSE:  1.182
+2023-01-26 06:14:53 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 07:04:05 : Epoch: 88 | time per epoch: 00:49:05 | eta: 09:49:10
+2023-01-26 07:04:05 : train | Loss:  1.204 | EPE:  0.534 | 1PE: 10.869 | 2PE:  2.692 | RMSE:  1.185
+2023-01-26 07:04:06 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 07:53:20 : Epoch: 89 | time per epoch: 00:49:05 | eta: 09:00:05
+2023-01-26 07:53:20 : train | Loss:  1.201 | EPE:  0.533 | 1PE: 10.864 | 2PE:  2.690 | RMSE:  1.178
+2023-01-26 07:53:21 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 08:42:35 : Epoch: 90 | time per epoch: 00:49:06 | eta: 08:11:00
+2023-01-26 08:42:35 : train | Loss:  1.199 | EPE:  0.532 | 1PE: 10.803 | 2PE:  2.677 | RMSE:  1.177
+2023-01-26 08:42:35 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 09:31:46 : Epoch: 91 | time per epoch: 00:49:06 | eta: 07:21:55
+2023-01-26 09:31:46 : train | Loss:  1.193 | EPE:  0.531 | 1PE: 10.762 | 2PE:  2.668 | RMSE:  1.174
+2023-01-26 09:31:46 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 10:20:59 : Epoch: 92 | time per epoch: 00:49:06 | eta: 06:32:49
+2023-01-26 10:20:59 : train | Loss:  1.196 | EPE:  0.531 | 1PE: 10.784 | 2PE:  2.672 | RMSE:  1.173
+2023-01-26 10:20:59 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 11:10:18 : Epoch: 93 | time per epoch: 00:49:06 | eta: 05:43:44
+2023-01-26 11:10:18 : train | Loss:  1.192 | EPE:  0.530 | 1PE: 10.740 | 2PE:  2.661 | RMSE:  1.174
+2023-01-26 11:10:18 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 11:59:36 : Epoch: 94 | time per epoch: 00:49:06 | eta: 04:54:38
+2023-01-26 11:59:36 : train | Loss:  1.190 | EPE:  0.529 | 1PE: 10.709 | 2PE:  2.651 | RMSE:  1.168
+2023-01-26 11:59:36 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 12:48:47 : Epoch: 95 | time per epoch: 00:49:06 | eta: 04:05:32
+2023-01-26 12:48:47 : train | Loss:  1.189 | EPE:  0.529 | 1PE: 10.696 | 2PE:  2.645 | RMSE:  1.168
+2023-01-26 12:48:47 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 13:38:00 : Epoch: 96 | time per epoch: 00:49:06 | eta: 03:16:26
+2023-01-26 13:38:00 : train | Loss:  1.185 | EPE:  0.528 | 1PE: 10.679 | 2PE:  2.644 | RMSE:  1.168
+2023-01-26 13:38:00 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 14:27:17 : Epoch: 97 | time per epoch: 00:49:06 | eta: 02:27:20
+2023-01-26 14:27:17 : train | Loss:  1.184 | EPE:  0.528 | 1PE: 10.660 | 2PE:  2.637 | RMSE:  1.167
+2023-01-26 14:27:17 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 15:16:31 : Epoch: 98 | time per epoch: 00:49:06 | eta: 01:38:13
+2023-01-26 15:16:31 : train | Loss:  1.187 | EPE:  0.528 | 1PE: 10.682 | 2PE:  2.640 | RMSE:  1.165
+2023-01-26 15:16:31 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 16:05:42 : Epoch: 99 | time per epoch: 00:49:06 | eta: 00:49:06
+2023-01-26 16:05:42 : train | Loss:  1.187 | EPE:  0.528 | 1PE: 10.654 | 2PE:  2.642 | RMSE:  1.171
+2023-01-26 16:05:42 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 16:54:52 : Epoch: 100 | time per epoch: 00:49:06 | eta: 00:00:00
+2023-01-26 16:54:52 : train | Loss:  1.185 | EPE:  0.527 | 1PE: 10.651 | 2PE:  2.635 | RMSE:  1.167
+2023-01-26 16:54:52 : Checkpoint is saved to /root/code/save/weights/final.pth
+2023-01-26 16:54:52 : Checkpoint is saved to /root/code/save/weights/100.pth
